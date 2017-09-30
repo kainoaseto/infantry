@@ -3,7 +3,8 @@ package server
 import (
 	"testing"
 	"fmt"
-	"github.com/kainoaseto/tank/web/clients"
+	"github.com/kainoaseto/infantry/web/clients"
+	"github.com/kainoaseto/infantry/web/server"
 )
 
 // Test out setting up a basic web service with the tank framework
@@ -22,10 +23,10 @@ func TestWebService(t *testing.T) {
 	// after creation
 	some_test_var := kernel.Env.Get("TEST_ENV_VAR", "DEFAULT_VALUE_IF_NOT_FOUND")
 	port := kernel.Env.Get("PORT", "4001")
-	kernel.Sever.Port := port
+	kernel.Server.Port := port
 
 	// Not allowing new clients initialized after this
-	// make external communication decisions here
+	// make external communication  decisions here
 	kernel.Clients := clients.NewClients(
 		clients.Redis,
 		clients.Mongo,
