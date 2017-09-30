@@ -1,0 +1,6 @@
+package: github.com/kainoaseto/infantry
+import:
+- package: github.com/labstack/echo
+  version: ^3.2.1
+- package: github.com/go-errors/errors
+- package: github.com/spf13/viper
