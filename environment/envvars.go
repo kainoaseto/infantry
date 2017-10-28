@@ -1,10 +1,31 @@
 package environment
 
-// TODO: Soooo after some research we want to use Viper and possibly contribute to it or Fork it and do a vast revision
-// with pulling in PRs from Viper that desperaretly need to get merged. At this point we may want to change EnvVarsManager
-// to ConfigManager or create a configuration package outside of environment and then setup Viper's environment management
-// to monitor the .env file and handle setting up Environemt variables and all that. Actually the more I write about it the
-// more I like the second option. Lets start doing that unless there is opposition
+import (
+	"github.com/kelseyhightower/envconfig"
+)
+
+// TODO: Currently this just processes entire configs via structures. This sucks.
+//       It needs to be able to do independent dynamic updating of environment variables
+//       set in the kernel and via config file.
+
+//       Since no one does this well anymore (RIP Viper) we will create our own here and possible
+//       export this package out to another repository in the future. We need to be able to read
+//       INI files since that is how docker manages .env files that we want to pass it. Here is a good
+//       package for this: https://github.com/go-ini/ini
+
+//       For dynamicness some of the work will need to be done by us, for the rest lets use Consul
+//       and this sweet thread safe thing called MVGA: https://github.com/rbastic/mvga
+//       That code is a mess so we will just credit the guy and rewrite it all ourself taking excerpts
+//       from it.
 
 type VariableManager struct {
+	config struct{}
+}
+
+func (*VariableManager) Get(key stirng) {
+
+}
+
+func (*VariableManager) Process(config struct{}) {
+	envconfig.Process("")
 }
