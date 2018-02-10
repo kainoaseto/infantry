@@ -1,8 +1,8 @@
 package infantry
 
 import (
+	"githb.com/go-errors/errors"
 	"github.com/kainoaseto/infantry/web/engine"
-	"error"
 )
 
 /*
@@ -13,13 +13,22 @@ import (
 */
 
 type Service struct {
+	engine *Engine
+	Ctx    *AppContext
 }
 
-func NewService(kernel *Kernel) *Service {
+func NewService(context *AppContext) *Service {
+
+	engine := engine.New()
 
 	return &Service{}
 }
 
-func NewKernel() *Kernel, error {
-	return &Kernel{}, nil
+func NewAppContext() (*AppContext, error) {
+
+	return &AppContext{}, nil
+}
+
+func (*Service) Start() error {
+
 }

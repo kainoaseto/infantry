@@ -1,0 +1,17 @@
+#+TITLE: Infantry Go Rest Framework
+
+* Purpose
+  A friendly and fast introduction to Go REST services that allows
+  for extremely quick iteration but provides a lot of the base scalability requirements of modern microservices
+  architecture.
+
+* Code Design
+  Currently this will be accomplished by using the Echo framework in the internal engine package
+  of this framework. Everything stored inside of engine will be internal to the Infantry framework. The files under
+  the infantry package should be consistent with the purpose of this project. It should be invisible to the user
+  that Echo is the framework that is being used to back this.
+
+* Documentation
+
+* Testing
+  We will be utilizing the Go Unit Testing framework as seen here: https://golang.org/pkg/testing/ every
