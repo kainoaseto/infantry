@@ -1,8 +1,7 @@
 package infantry
 
 import (
-	"githb.com/go-errors/errors"
-	"github.com/kainoaseto/infantry/web/engine"
+	"github.com/go-errors/errors"
 )
 
 /*

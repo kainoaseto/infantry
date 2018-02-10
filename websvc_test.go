@@ -2,8 +2,6 @@ package infantry
 
 import (
 	"fmt"
-	"github.com/kainoaseto/infantry/web/clients"
-	"github.com/kainoaseto/infantry/web/server"
 	"testing"
 )
 
